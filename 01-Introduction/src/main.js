@@ -43,7 +43,6 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 //5. Create the Renderer
-
 // create the renderer
 const renderer = new THREE.WebGLRenderer();
 
