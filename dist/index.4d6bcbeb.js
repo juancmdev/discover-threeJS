@@ -607,7 +607,11 @@ const camera = new _three.PerspectiveCamera(fov, aspect, near, far);
 // move the camera back so we can view the scene
 camera.position.set(0, 0, 10);
 //Create geometry
-const geometry = new _three.Box();
+const geometry = new _three.BoxGeometry(2, 2, 2);
+// create a default (white) Basic material
+const material = new _three.MeshBasicMaterial();
+// create a Mesh containing the geometry and material
+const cube = new _three.Mesh(geometry, material);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
 /**

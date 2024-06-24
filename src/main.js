@@ -10,7 +10,6 @@ Every three.js app you create will require all six of these steps, although more
 */
 
 import * as THREE from "three";
-import { BoxBufferGeometry } from "three";
 
 const container = document.querySelector("#scene-container");
 
@@ -29,4 +28,10 @@ const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.set(0, 0, 10);
 
 //Create geometry
-const geometry = new THREE.Box();
+const geometry = new THREE.BoxGeometry(2, 2, 2);
+
+// create a default (white) Basic material
+const material = new THREE.MeshBasicMaterial();
+
+// create a Mesh containing the geometry and material
+const cube = new THREE.Mesh(geometry, material);
