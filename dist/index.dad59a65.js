@@ -584,6 +584,61 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"aIpEK":[function(require,module,exports) {
+var _world = require("./World/World");
+// // 2. Render the scene
+// world.render();
+// create the main function
+function main() {
+    // Get a reference to the container element
+    const container = document.querySelector("#scene-container");
+    // 1. Create an instance of the World app
+    const world = new (0, _world.World)(container);
+    // 2. Render the scene
+    world.render();
+}
+// call main to start the app
+main();
+
+},{"./World/World":"k7jQO"}],"k7jQO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "World", ()=>World);
+class World {
+    // 1. Create an instance of the World app
+    constructor(container){}
+    // 2. Render the scene
+    render() {}
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}],"7JQpJ":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["lOZgr","aIpEK"], "aIpEK", "parcelRequire94c2")
 
