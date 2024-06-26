@@ -1,7 +1,4 @@
-import { World } from "./World/World";
-
-// // 2. Render the scene
-// world.render();
+import { World } from "./World/World.js";
 
 // create the main function
 function main() {
