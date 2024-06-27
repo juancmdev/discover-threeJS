@@ -604,6 +604,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "World", ()=>World);
 var _camera = require("./components/camera");
 var _cube = require("./components/cube");
+var _sphere = require("./components/sphere");
 var _scene = require("./components/scene");
 var _renderer = require("./systems/renderer");
 var _resizer = require("./systems/Resizer");
@@ -620,7 +621,8 @@ class World {
         renderer = (0, _renderer.createRenderer)();
         container.append(renderer.domElement);
         const cube = (0, _cube.createCube)();
-        scene.add(cube);
+        const sphere = (0, _sphere.createSphere)();
+        scene.add(cube, sphere);
         const resizer = new (0, _resizer.Resizer)(container, camera, renderer);
     }
     // 2. Render the scene
@@ -629,7 +631,7 @@ class World {
     }
 }
 
-},{"./components/camera":"2mTJi","./components/cube":"lPcxO","./components/scene":"69rfo","./systems/renderer":"hHuyx","./systems/Resizer":"iWRjK","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}],"2mTJi":[function(require,module,exports) {
+},{"./components/camera":"2mTJi","./components/scene":"69rfo","./systems/renderer":"hHuyx","./systems/Resizer":"iWRjK","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ","./components/sphere":"52qQM","./components/cube":"lPcxO"}],"2mTJi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createCamera", ()=>createCamera);
@@ -31823,22 +31825,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"lPcxO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createCube", ()=>createCube);
-var _three = require("three");
-function createCube() {
-    // Create geometry
-    const geometry = new (0, _three.BoxGeometry)(2, 2, 2);
-    // Create a default (white) basic material
-    const material = new (0, _three.MeshBasicMaterial)();
-    // create a Mesh containing the geometry and material
-    const cube = new (0, _three.Mesh)(geometry, material);
-    return cube;
-}
-
-},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}],"69rfo":[function(require,module,exports) {
+},{}],"69rfo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createScene", ()=>createScene);
@@ -31876,6 +31863,37 @@ class Resizer {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}]},["lOZgr","aIpEK"], "aIpEK", "parcelRequire94c2")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}],"52qQM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createSphere", ()=>createSphere);
+var _three = require("three");
+function createSphere() {
+    // Create geometry
+    const geometry = new (0, _three.SphereGeometry)(1, 32, 16);
+    // Create a default (white) basic material
+    const material = new (0, _three.MeshBasicMaterial)();
+    // create a Mesh containing the geometry and material
+    const sphere = new (0, _three.Mesh)(geometry, material);
+    return sphere;
+}
+
+},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}],"lPcxO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createCube", ()=>createCube);
+var _three = require("three");
+function createCube() {
+    // Create geometry
+    const geometry = new (0, _three.BoxGeometry)(1, 1, 1);
+    // Create a default (white) basic material
+    const material = new (0, _three.MeshBasicMaterial)();
+    // create a Mesh containing the geometry and material
+    const cube = new (0, _three.Mesh)(geometry, material);
+    cube.position.set(2, 0, 0);
+    return cube;
+}
+
+},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}]},["lOZgr","aIpEK"], "aIpEK", "parcelRequire94c2")
 
 //# sourceMappingURL=index.dad59a65.js.map
