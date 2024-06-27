@@ -585,6 +585,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"aIpEK":[function(require,module,exports) {
 var _worldJs = require("./World/World.js");
+const button = document.querySelector("button");
 // create the main function
 function main() {
     // Get a reference to the container element
@@ -31844,7 +31845,7 @@ parcelHelpers.export(exports, "createScene", ()=>createScene);
 var _three = require("three");
 function createScene() {
     const scene = new (0, _three.Scene)();
-    scene.background = new (0, _three.Color)("red");
+    scene.background = new (0, _three.Color)("green");
     return scene;
 }
 
@@ -31866,6 +31867,8 @@ class Resizer {
     constructor(container, camera, renderer){
         // Set the camera's aspect ratio to match the container's proportions
         camera.aspect = container.clientWidth / container.clientHeight;
+        // update the camera's frustum
+        camera.updateProjectionMatrix();
         // next, set the renderer to the same size as our container element
         renderer.setSize(container.clientWidth, container.clientHeight);
         // finally, set the pixel ratio to ensure our scene will look good on mobile devices

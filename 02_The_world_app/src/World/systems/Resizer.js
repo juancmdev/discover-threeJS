@@ -3,6 +3,9 @@ class Resizer {
     // Set the camera's aspect ratio to match the container's proportions
     camera.aspect = container.clientWidth / container.clientHeight;
 
+    // update the camera's frustum
+    camera.updateProjectionMatrix();
+
     // next, set the renderer to the same size as our container element
     renderer.setSize(container.clientWidth, container.clientHeight);
 

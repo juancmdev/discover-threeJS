@@ -1,5 +1,6 @@
 import { World } from "./World/World.js";
 
+const button = document.querySelector("button");
 // create the main function
 function main() {
   // Get a reference to the container element
