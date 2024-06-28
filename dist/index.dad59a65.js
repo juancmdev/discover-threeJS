@@ -31841,6 +31841,8 @@ parcelHelpers.export(exports, "createRenderer", ()=>createRenderer);
 var _three = require("three");
 function createRenderer() {
     const renderer = new (0, _three.WebGLRenderer)();
+    // turn on the physically correct lighting model
+    renderer.physicallyCorrectLights = true;
     return renderer;
 }
 
