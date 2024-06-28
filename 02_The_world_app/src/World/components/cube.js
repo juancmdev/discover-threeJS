@@ -1,4 +1,4 @@
-import { BoxGeometry, Mesh, MeshBasicMaterial } from "three";
+import { BoxGeometry, Mesh, MeshStandardMaterial } from "three";
 
 function createCube() {
   // Create geometry

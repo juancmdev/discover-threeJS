@@ -604,6 +604,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "World", ()=>World);
 var _camera = require("./components/camera");
 var _cube = require("./components/cube");
+var _lights = require("./components/lights");
 var _scene = require("./components/scene");
 var _renderer = require("./systems/renderer");
 var _resizer = require("./systems/Resizer");
@@ -620,7 +621,8 @@ class World {
         renderer = (0, _renderer.createRenderer)();
         container.append(renderer.domElement);
         const cube = (0, _cube.createCube)();
-        scene.add(cube);
+        const light = (0, _lights.createLights)();
+        scene.add(cube, light);
         const resizer = new (0, _resizer.Resizer)(container, camera, renderer);
     }
     // 2. Render the scene
@@ -629,7 +631,7 @@ class World {
     }
 }
 
-},{"./components/camera":"2mTJi","./components/scene":"69rfo","./systems/renderer":"hHuyx","./systems/Resizer":"iWRjK","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ","./components/cube":"lPcxO"}],"2mTJi":[function(require,module,exports) {
+},{"./components/camera":"2mTJi","./components/scene":"69rfo","./systems/renderer":"hHuyx","./systems/Resizer":"iWRjK","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ","./components/cube":"lPcxO","./components/lights":"hQk9n"}],"2mTJi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createCamera", ()=>createCamera);
@@ -31872,11 +31874,24 @@ function createCube() {
     // Create geometry
     const geometry = new (0, _three.BoxGeometry)(2, 2, 2);
     // Create a default (white) basic material
-    const material = new (0, _three.MeshBasicMaterial)();
+    const material = new MeshBasicMaterial();
     // create a Mesh containing the geometry and material
     const cube = new (0, _three.Mesh)(geometry, material);
     cube.position.set(0, 0, 0);
     return cube;
+}
+
+},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}],"hQk9n":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createLights", ()=>createLights);
+var _three = require("three");
+function createLights() {
+    // Create a directional light
+    const light = new (0, _three.DirectionalLight)("white", 8);
+    // move the light right, up, and towards us
+    light.position.set(10, 10, 10);
+    return light;
 }
 
 },{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"7JQpJ"}]},["lOZgr","aIpEK"], "aIpEK", "parcelRequire94c2")
