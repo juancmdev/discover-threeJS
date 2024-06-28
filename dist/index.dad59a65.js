@@ -31877,7 +31877,7 @@ function createCube() {
   const material = new MeshBasicMaterial();*/ // Switch the old "basic" material to
     // a physically correct "standard" material
     const material = new (0, _three.MeshStandardMaterial)({
-        color: "purple"
+        color: "green"
     });
     // create a Mesh containing the geometry and material
     const cube = new (0, _three.Mesh)(geometry, material);

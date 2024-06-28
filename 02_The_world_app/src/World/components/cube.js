@@ -9,7 +9,7 @@ function createCube() {
 
   // Switch the old "basic" material to
   // a physically correct "standard" material
-  const material = new MeshStandardMaterial({ color: "purple" });
+  const material = new MeshStandardMaterial({ color: "green" });
 
   // create a Mesh containing the geometry and material
   const cube = new Mesh(geometry, material);
