@@ -31842,7 +31842,9 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createRenderer", ()=>createRenderer);
 var _three = require("three");
 function createRenderer() {
-    const renderer = new (0, _three.WebGLRenderer)();
+    const renderer = new (0, _three.WebGLRenderer)({
+        antialias: true
+    });
     // turn on the physically correct lighting model
     renderer.physicallyCorrectLights = true;
     return renderer;
@@ -31881,7 +31883,9 @@ function createCube() {
     });
     // create a Mesh containing the geometry and material
     const cube = new (0, _three.Mesh)(geometry, material);
+    cube.position.set(0, 0, 0);
     cube.rotation.set(-0.5, -0.1, 0.8);
+    cube.scale.set(1, 1, 1);
     return cube;
 }
 
@@ -31894,7 +31898,7 @@ function createLights() {
     // Create a directional light
     const light = new (0, _three.DirectionalLight)("white", 8);
     // move the light right, up, and towards us
-    light.position.set(10, 10, 10);
+    light.position.set(50, 50, 50);
     return light;
 }
 
