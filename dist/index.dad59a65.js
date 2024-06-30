@@ -31892,7 +31892,7 @@ parcelHelpers.export(exports, "createLights", ()=>createLights);
 var _three = require("three");
 function createLights() {
     // Create a directional light
-    const light = new (0, _three.DirectionalLight)("blue", 10);
+    const light = new (0, _three.DirectionalLight)("white", 8);
     // move the light right, up, and towards us
     light.position.set(10, 10, 10);
     return light;
